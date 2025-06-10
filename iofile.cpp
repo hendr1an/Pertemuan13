@@ -1,45 +1,45 @@
-#include <fstream>
-#include <iostream>
-#include <string>
-using namespace std;
+    #include <fstream>
+    #include <iostream>
+    #include <string>
+    using namespace std;
 
-int main ()
-{
-    string baris;
-    
-    ofstream outfile;
-    outfile.open("contohfile.txt");
-    cout << ">= Menulis file, \'q\' untuk keluar" << endl;
-
-    while (true)
+    int main ()
     {
-        cout << "- ";
-        getline(cin, baris);
-        if(baris == "q")
-        break;
+        string baris;
         
-        outfile << baris << endl;
-    }
+        ofstream outfile;
+        outfile.open("contohfile.txt");
+        cout << ">= Menulis file, \'q\' untuk keluar" << endl;
 
-    outfile.close();
+        while (true)
+        {
+            cout << "- ";
+            getline(cin, baris);
+            if(baris == "q")
+            break;
+            
+            outfile << baris << endl;
+        }
 
-ifstream infile;
+        outfile.close();
 
-infile.open("contohfile.txt");
+    ifstream infile;
 
-cout << endl
-     << ">= membuka dan membaca file " << endl;
+    infile.open("contohfile.txt");
 
-if (infile.is_open())
-{
-    while (getline(infile, baris))
+    cout << endl
+        << ">= membuka dan membaca file " << endl; 
+
+    if (infile.is_open())
     {
-       cout << baris << '\n';
-    }
+        while (getline(infile, baris))
+        {
+        cout << baris << '\n';
+        }
 
-    infile.close();
-}
-else
-  cout << "unable to open this file";
-  return 0;
-}
+        infile.close();
+    }
+    else
+    cout << "unable to open this file";
+    return 0;
+    }
